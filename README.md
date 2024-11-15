@@ -1,5 +1,7 @@
 # 小米物联网设置 exporter
 
+将 米家设备状态导出为 metrics 数据
+
 ## 使用
 
 获取设备 token，参考 [获取设备 token](#获取设备-token)
@@ -17,14 +19,12 @@ python exporter.py
 
 ```bash
 make
-
 ```
 
 ## 获取设备 token
 
 ```bash
 pip install micloud
-
 micloud get-devices  -u <邮箱/手机号> --pretty --country 'cn'
 # 输入密码
 ```
