@@ -1,0 +1,3 @@
+git+https://github.com/rytilahti/python-miio.git
+prometheus-client
+micloud

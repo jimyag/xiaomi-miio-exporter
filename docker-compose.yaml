@@ -1,0 +1,9 @@
+services:
+  xiaomi-miio-exporter:
+    image: registry.i.jimyag.com/xiaomi-miio-exporter:latest
+    container_name: xiaomi-miio-exporter
+    restart: always
+    ports:
+     - '10014:8000'
+    volumes:
+      - './config.py:/app/config.py'
