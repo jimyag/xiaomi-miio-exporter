@@ -1,41 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_IPC",
-      "label": "ipc",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "11.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -55,13 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": null,
+  "id": 13,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_IPC}"
+        "uid": "adnrw1ap8ukn4e"
       },
       "fieldConfig": {
         "defaults": {
@@ -129,7 +92,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_IPC}"
+            "uid": "adnrw1ap8ukn4e"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -146,7 +109,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_IPC}"
+        "uid": "adnrw1ap8ukn4e"
       },
       "fieldConfig": {
         "defaults": {
@@ -215,7 +178,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_IPC}"
+            "uid": "adnrw1ap8ukn4e"
           },
           "editorMode": "code",
           "expr": "xiaomi_cuco_plug_v3_switch_fault{device_name=~\"$device_name\"}",
@@ -231,7 +194,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_IPC}"
+        "uid": "adnrw1ap8ukn4e"
       },
       "fieldConfig": {
         "defaults": {
@@ -244,6 +207,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -254,11 +218,12 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
-              "type": "linear"
+              "log": 2,
+              "type": "symlog"
             },
             "showPoints": "auto",
             "spanNulls": false,
@@ -277,13 +242,10 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
-          }
+          },
+          "unit": "watt"
         },
         "overrides": []
       },
@@ -313,7 +275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_IPC}"
+            "uid": "adnrw1ap8ukn4e"
           },
           "editorMode": "code",
           "expr": "xiaomi_cuco_plug_v3_electric_power{device_name=~\"$device_name\"}",
@@ -329,7 +291,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_IPC}"
+        "uid": "adnrw1ap8ukn4e"
       },
       "fieldConfig": {
         "defaults": {
@@ -352,8 +314,8 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -410,7 +372,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_IPC}"
+            "uid": "adnrw1ap8ukn4e"
           },
           "editorMode": "code",
           "expr": "xiaomi_cuco_plug_v3_max_power_limit{device_name=~\"$device_name\"}",
@@ -426,7 +388,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_IPC}"
+        "uid": "adnrw1ap8ukn4e"
       },
       "fieldConfig": {
         "defaults": {
@@ -449,8 +411,8 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -507,7 +469,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_IPC}"
+            "uid": "adnrw1ap8ukn4e"
           },
           "editorMode": "code",
           "expr": "xiaomi_cuco_plug_v3_power_limit_extension{device_name=~\"$device_name\"}",
@@ -526,10 +488,18 @@
   "templating": {
     "list": [
       {
-        "current": {},
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_IPC}"
+          "uid": "adnrw1ap8ukn4e"
         },
         "definition": "label_values(xiaomi_cuco_plug_v3_switch_up,device_name)",
         "hide": 0,
@@ -552,7 +522,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-1h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
@@ -560,6 +530,6 @@
   "timezone": "browser",
   "title": "xiaomi-miio-exporter",
   "uid": "be413xvij6cjke",
-  "version": 9,
+  "version": 12,
   "weekStart": ""
 }
