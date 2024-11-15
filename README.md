@@ -25,6 +25,12 @@ docker compose up -d
 
 访问 `http://localhost:10014/metrics` 查看数据
 
+## grafana 面板配置
+
+![image](./imgs/grafana-dashboards.png)
+
+导入 [xiaomi-miio-exporter.json](./grafana/xiaomi-miio-exporter.json) 面板
+
 ## 获取设备 token
 
 ```bash

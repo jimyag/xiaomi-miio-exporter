@@ -67,8 +67,8 @@ class CUCOPlugV3(Device):
         if data:
             return data[0]["value"]
 
-    def switch_up(self) -> bool:  # 开关状态
-        data = self.get(2, 2)
+    def switch_up(self):  # 开关状态
+        data = self.get(2, 1)
         if data:
             return data[0]["value"]
 
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             ).set(plug.power_limit_extension())
             switch_state_gauge.labels(
                 device_ip=plug.ip, device_name=device["name"]
-            ).set(plug.switch_up())
+            ).set(1 if plug.switch_up() else 0)
             switch_fault_state_gauge.labels(
                 device_ip=plug.ip, device_name=device["name"]
             ).set(plug.switch_fault())
