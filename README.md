@@ -1,6 +1,6 @@
-# 小米物联网设置 exporter
+# 小米物联网设备 exporter
 
-将 米家设备状态导出为 metrics 数据
+将米家设备状态导出为 metrics 数据
 
 ## 使用
 
