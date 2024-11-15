@@ -1,6 +1,6 @@
 services:
   xiaomi-miio-exporter:
-    image: registry.i.jimyag.com/xiaomi-miio-exporter:latest
+    image: jimyag/xiaomi-miio-exporter:latest
     container_name: xiaomi-miio-exporter
     restart: always
     ports:

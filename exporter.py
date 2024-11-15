@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-from time import sleep, time
 from miio import Device
-from os.path import isfile
 import prometheus_client as pc
 import config
+import time
 
 # 设置默认端口如果配置文件没有设置
 prometheus_port = getattr(config, "prometheus_port", 8000)
@@ -105,4 +104,4 @@ if __name__ == "__main__":
                 device_ip=plug.ip, device_name=device["name"]
             ).set(plug.switch_fault())
 
-        sleep(5)
+        time.sleep(5)

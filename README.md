@@ -18,8 +18,12 @@ python exporter.py
 使用 docker 运行
 
 ```bash
-make
+# 修改配置
+# 运行
+docker compose up -d
 ```
+
+访问 `http://localhost:10014/metrics` 查看数据
 
 ## 获取设备 token
 
